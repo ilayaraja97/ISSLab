@@ -7,7 +7,8 @@ int main(int argv,char** args)
 {
     const int key[3][3]={{2,4,1},{5,6,2},{2,3,1}};
     string plaintext=args[1],ciphertext="";
-    int pt[144]={0}; //why 144? i encrypt tweets!
+    assert(plaintext.length()<142);
+    int pt[145]={0}; //why 144? i encrypt tweets!
     for(uint i=0;i<plaintext.length();i++)
     {
         pt[i]=plaintext[i]-'a';
