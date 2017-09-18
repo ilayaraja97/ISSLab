@@ -23,7 +23,16 @@ string xor_ecb(string in)
 	pt=(pt<<8)|in[5];
 	pt=(pt<<8)|in[6];
 	pt=(pt<<8)|in[7];
-	uint64_t key = 1432673451324325234L;
+	string s="12345678";
+	uint64_t key=s[0];
+	key=(key<<8)|s[1];
+	key=(key<<8)|s[2];
+	key=(key<<8)|s[3];
+	key=(key<<8)|s[4];
+	key=(key<<8)|s[5];
+	key=(key<<8)|s[6];
+	key=(key<<8)|s[7];
+	//uint64_t key = 1432673451324325234L;
     uint64_t ct = pt^key;
     string out = "";
     for(int i=1;i<=8;i++)
@@ -36,6 +45,6 @@ string xor_ecb(string in)
 int main(int argv,char *args[])
 {
 	//ios::sync_with_stdio(false);
-    cout<<xor_ecb("raja")<<endl;
+    cout<<xor_ecb(args[1])<<endl;
     return 0;
 }
